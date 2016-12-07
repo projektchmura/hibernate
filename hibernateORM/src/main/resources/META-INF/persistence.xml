@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="persistenceUnit" transaction-type="RESOURCE_LOCAL">
+        <!-- shouldn't be valid for java SE per specification, but it works for EclipseLink ... -->
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+
+            <!-- Configuring JDBC properties
+
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hibernate?createDatabaseIfNotExist=true" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="Qwert123!" />
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" /> -->
+
+            <!-- Hibernate properties -->
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/hibernate?createDatabaseIfNotExist=true" />
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value="Qwert123!"/>
+
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+
+        </properties>
+    </persistence-unit>
+</persistence>
